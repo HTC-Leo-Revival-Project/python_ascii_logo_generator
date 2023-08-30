@@ -22,3 +22,7 @@ Edit the figlet font name you wanna use and change the res and the text to your 
 python3 ascii_art_generator.py --res 400x800 --font block --output output_image.bmp "HTC LEO REVIVAL PROJECT"
 ```
 </pre>
+
+## Pictures
+
+![HtcLeo Revival Project Splash](https://i.imgur.com/5E1QZis.png)
