@@ -17,4 +17,8 @@ pip install Pillow pyfiglet
 
 Edit the figlet font name you wanna use and change the res and the text to your desired values then run:
 
-python3 python ascii_art_generator.py --res 400x800 --font block --output output_image.bmp "HTC LEO REVIVAL PROJECT"
+<pre>
+```bash
+python3 ascii_art_generator.py --res 400x800 --font block --output output_image.bmp "HTC LEO REVIVAL PROJECT"
+```
+</pre>
