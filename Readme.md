@@ -26,3 +26,4 @@ python3 ascii_art_generator.py --res 400x800 --font block --output output_image.
 ## Pictures
 
 ![HtcLeo Revival Project Splash](https://i.imgur.com/5E1QZis.png)
+![Default figlet font](https://i.imgur.com/YFSyiVI.png)
