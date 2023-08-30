@@ -13,7 +13,7 @@ You can install the required packages using the following command:
 
 pip install Pillow pyfiglet
 
-##Usage
+## Usage
 
 Edit the figlet font name you wanna use and change the res and the text to your desired values then run:
 
