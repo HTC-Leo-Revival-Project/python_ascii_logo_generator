@@ -1,15 +1,26 @@
 from PIL import Image, ImageDraw, ImageFont
 import pyfiglet
+import argparse
+
+# Parse command-line arguments
+parser = argparse.ArgumentParser(description="Generate ASCII art image.")
+parser.add_argument("--res", type=str, help="Image resolution (widthxheight)")
+parser.add_argument("--font", type=str, help="FIGlet font name")
+parser.add_argument("--output", type=str, help="Output filename")
+parser.add_argument("message", type=str, help="Text message for ASCII art")
+args = parser.parse_args()
+
+# Process resolution argument
+image_width, image_height = map(int, args.res.split('x'))
+image_size = (image_width, image_height)
 
 # Settings
-output_filename = "ascii_art_image.bmp"
-image_size = (400, 800)
-font_name = "fire"  # Replace with the name of your custom font (without the .flf extension)
-message = "HTC LEO REVIVAL PROJECT"
+output_filename = args.output
+font_name = args.font
 
-# Generate ASCII art text with custom font
+# Generate ASCII art text
 font = pyfiglet.Figlet(font=font_name)
-ascii_text = font.renderText(message)
+ascii_text = font.renderText(args.message)
 
 # Create a new image with a black background
 image = Image.new("RGB", image_size, (0, 0, 0))
