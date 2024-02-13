@@ -6,6 +6,7 @@ import argparse
 parser = argparse.ArgumentParser(description="Generate ASCII art image.")
 parser.add_argument("--res", type=str, help="Image resolution (widthxheight)")
 parser.add_argument("--font", type=str, help="FIGlet font name")
+parser.add_argument("--fontsize", type=int, help="Font size")
 parser.add_argument("--output", type=str, help="Output filename")
 parser.add_argument("message", type=str, help="Text message for ASCII art")
 args = parser.parse_args()
@@ -17,10 +18,15 @@ image_size = (image_width, image_height)
 # Settings
 output_filename = args.output
 font_name = args.font
+font_size = args.fontsize
 
 # Generate ASCII art text
 font = pyfiglet.Figlet(font=font_name)
 ascii_text = font.renderText(args.message)
+
+# Calculate font size based on image resolution if not provided
+if font_size is None:
+    font_size = min(image_width // len(ascii_text.split('\n')[0]), image_height // len(ascii_text.split('\n')))
 
 # Create a new image with a black background
 image = Image.new("RGB", image_size, (0, 0, 0))
@@ -28,7 +34,6 @@ draw = ImageDraw.Draw(image)
 
 # Load a font
 font_path = "FreeMono.ttf"  # Replace with the path to a TrueType font file
-font_size = 8  # Initial font size decreased by 2
 font = ImageFont.truetype(font_path, font_size)
 
 # Calculate dimensions of the text
