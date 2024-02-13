@@ -11,7 +11,7 @@ Before running the script, ensure you have the following:
 
 You can install the required packages using the following command:
 
-pip install Pillow pyfiglet
+pip install -r requirements.txt
 
 ## Usage
 
